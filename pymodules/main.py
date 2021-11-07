@@ -1,13 +1,13 @@
 '''
 Author: 兄弟们Go
 Date: 2021-11-07 17:01:31
-LastEditTime: 2021-11-07 19:19:47
+LastEditTime: 2021-11-07 20:41:33
 LastEditors: 兄弟们Go
 Description: 
 FilePath: \pymodules\pymodules\main.py
 
 '''
-import importlib
+import importlib,sys
 class require(object):
     def __init__(self,name):
         self.__RequireManageData__ ={
@@ -21,7 +21,7 @@ class require(object):
     def __call__(self,*args,**kwargs):
         self.__check_imported()
         return self.__RequireManageData__["obj"](*args,**kwargs)
-    def at(self,name):
+    def From(self,name):
         self.__RequireManageData__["at"] = name
         return self
     def __getattr__(self, name):
@@ -62,13 +62,18 @@ class require(object):
         self.__check_imported()
         if(self.__RequireManageData__["imported"]):
             return '<{0}.{1} object at {2} wrapped in {3}>'.format(
-            self.__module__,type(self.__RequireManageData__["obj"]).__name__,
+            self.__RequireManageData__["name"],type(self.__RequireManageData__["obj"]).__name__,
             hex(id(self.__RequireManageData__["obj"])),hex(id(self)))
         return '<{0}.{1} object at {2}>'.format(
             self.__module__,type(self).__name__,hex(id(self)))
     def __repr__(self):
         return self.__str__()
-
+    def As(self,name):
+        # 暂时不能用
+        self.__check_imported()
+        globals().update({name:self.__RequireManageData__["obj"]})
+        return self.__RequireManageData__["obj"]
 if __name__ == '__main__':
-    a = require("tkinter")
-    print(a)
+    # a = require("tkinter").As('s')
+    # print(s)
+    pass
