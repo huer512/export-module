@@ -1,17 +1,18 @@
 '''
 Author: 兄弟们Go
 Date: 2021-11-07 16:54:43
-LastEditTime: 2021-11-07 16:59:17
+LastEditTime: 2021-11-07 19:50:55
 LastEditors: 兄弟们Go
 Description: 
 FilePath: \pymodules\setup.py
 
 '''
 import setuptools
-
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
+try:
+    with open("README.md", "r") as fh:
+        long_description = fh.read()
+except Exception as e:
+    long_description = "A package solving the problem of import function"
 setuptools.setup(
     name="pymodules", # Replace with your own username
     version="0.0.1",
