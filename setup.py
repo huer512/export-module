@@ -1,7 +1,7 @@
 '''
 Author: 兄弟们Go
 Date: 2021-11-07 16:54:43
-LastEditTime: 2021-11-07 19:50:55
+LastEditTime: 2021-11-28 16:21:24
 LastEditors: 兄弟们Go
 Description: 
 FilePath: \pymodules\setup.py
@@ -14,14 +14,14 @@ try:
 except Exception as e:
     long_description = "A package solving the problem of import function"
 setuptools.setup(
-    name="pymodules", # Replace with your own username
+    name="pymodules",
     version="0.0.1",
-    author="xdykj",
+    author="xiongdi",
     author_email="xdykj@outlook.com",
-    description="A package that try to solve the problem of import function",
+    description="A package that implement the import and export method",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://multiblock.coding.net/p/yunxunlian/d/pymodules/",
+    url="https://",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -30,4 +30,5 @@ setuptools.setup(
         "Development Status :: 1 - Planning",
     ],
     python_requires='>=3.6',
+    install_requires=[],
 )
