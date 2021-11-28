@@ -1,10 +1,10 @@
 '''
 Author: 兄弟们Go
 Date: 2021-11-07 16:54:43
-LastEditTime: 2021-11-28 16:21:24
+LastEditTime: 2021-11-28 19:12:10
 LastEditors: 兄弟们Go
 Description: 
-FilePath: \pymodules\setup.py
+FilePath: \export-module\setup.py
 
 '''
 import setuptools
@@ -14,14 +14,14 @@ try:
 except Exception as e:
     long_description = "A package solving the problem of import function"
 setuptools.setup(
-    name="pymodules",
+    name="export-module",
     version="0.0.1",
     author="xiongdi",
     author_email="xdykj@outlook.com",
     description="A package that implement the import and export method",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://",
+    url="https://github.com/huer512/export-module",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
